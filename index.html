@@ -16,62 +16,53 @@
 
     <div class="matrix-bg"></div>
 
-    <header>
-
-        <h1>🔐 CYBER CIPHER LAB</h1>
-
-        <p>
-            Learn, Visualize and Test Classical Cryptographic Algorithms
-        </p>
-
-    </header>
+    <div class="app-shell">
+        <header>
+            <div class="brand-wrap">
+                <div class="brand-icon">🔐</div>
+                <div>
+                    <h1>CYBER CIPHER LAB</h1>
+                    <p>Learn, visualize, and test classical cryptography with a modern interface.</p>
+                </div>
+            </div>
+        </header>
 
     <!-- Cipher Selection -->
 
     <section class="cipher-selector">
-
-        <button class="cipher-btn active"
-            data-cipher="mono"
-            onclick="loadCipher('mono')">
-            Monoalphabetic Cipher
-        </button>
-
-        <button class="cipher-btn"
-            data-cipher="playfair"
-            onclick="loadCipher('playfair')">
-            Playfair Cipher
-        </button>
-
-        <button class="cipher-btn"
-            data-cipher="hill"
-            onclick="loadCipher('hill')">
-            Hill Cipher
-        </button>
-
+        <div class="selector-label">Choose a cipher</div>
+        <div class="selector-group">
+            <button class="cipher-btn active" data-cipher="mono" onclick="loadCipher('mono')">
+                Monoalphabetic
+            </button>
+            <button class="cipher-btn" data-cipher="playfair" onclick="loadCipher('playfair')">
+                Playfair
+            </button>
+            <button class="cipher-btn" data-cipher="hill" onclick="loadCipher('hill')">
+                Hill
+            </button>
+        </div>
     </section>
 
-    <main>
+    <main class="main-content">
 
         <!-- Tutorial -->
 
         <section class="tutorial-panel">
-
-            <h2>📘 Tutorial</h2>
-
-            <div id="tutorialContainer">
-
-                <!-- Dynamic Tutorial -->
-
+            <div class="panel-header">
+                <h2>📘 Tutorial</h2>
+                <p>Follow the steps below to understand each cipher and how encryption works.</p>
             </div>
-
+            <div id="tutorialContainer"></div>
         </section>
 
         <!-- Encrypt Panel -->
 
         <section class="encrypt-panel">
-
-            <h2>🔒 Encrypt Text</h2>
-
+            <div class="panel-header">
+                <h2>🔒 Encrypt Text</h2>
+                <p>Enter your message and choose or generate a key for encryption.</p>
+            </div>
             <div class="input-group">
 
                 <label>Plain Text</label>
@@ -136,9 +127,10 @@
         <!-- Decrypt Panel -->
 
         <section class="decrypt-panel">
-
-            <h2>🔓 Decrypt Text</h2>
-
+            <div class="panel-header">
+                <h2>🔓 Decrypt Text</h2>
+                <p>Paste the encrypted text and use the right key to recover the original message.</p>
+            </div>
             <div class="input-group">
 
                 <label>Encrypted Text</label>
@@ -193,6 +185,7 @@
         </p>
 
     </footer>
+    </div>
 
     <script src="script.js"></script>
 
