@@ -1,0 +1,299 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron',sans-serif;
+}
+
+body{
+    background:#050816;
+    color:#e6f7ff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Animated Cyber Background */
+.matrix-bg{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+    radial-gradient(circle at top,#00ffcc22,transparent 30%),
+    radial-gradient(circle at bottom,#00aaff22,transparent 30%),
+    linear-gradient(135deg,#030712,#0b1120,#020617);
+}
+
+.matrix-bg::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(0,255,170,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,170,.08) 1px,transparent 1px);
+    background-size:40px 40px;
+}
+
+/* Header */
+
+header{
+    text-align:center;
+    padding:25px;
+    border-bottom:1px solid rgba(0,255,255,.2);
+    backdrop-filter:blur(10px);
+}
+
+header h1{
+    color:#00ffe0;
+    letter-spacing:3px;
+    margin-bottom:10px;
+    text-shadow:
+    0 0 10px #00ffe0,
+    0 0 20px #00ffe0;
+}
+
+header p{
+    color:#9fc5d8;
+}
+
+/* Cipher Buttons */
+
+.cipher-selector{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    padding:20px;
+}
+
+.cipher-btn{
+    padding:12px 20px;
+    background:#081221;
+    border:1px solid #00ffd5;
+    color:#00ffd5;
+    cursor:pointer;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.cipher-btn:hover,
+.cipher-btn.active{
+    background:#00ffd5;
+    color:#001018;
+    box-shadow:0 0 15px #00ffd5;
+}
+
+/* Main Layout */
+
+main{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+    padding:20px;
+}
+
+/* Cards */
+
+.tutorial-panel,
+.encrypt-panel,
+.decrypt-panel{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(0,255,255,.15);
+    border-radius:18px;
+    padding:20px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 20px rgba(0,255,255,.08);
+}
+
+h2{
+    color:#00ffe0;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+/* Accordion */
+
+.accordion{
+    margin-bottom:12px;
+}
+
+.accordion-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#071423;
+    color:#00ffd5;
+    text-align:left;
+    cursor:pointer;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.accordion-content{
+    display:none;
+    padding:15px;
+    margin-top:5px;
+    background:#09111f;
+    border-left:3px solid #00ffd5;
+    color:#cfefff;
+    line-height:1.7;
+}
+
+/* Inputs */
+
+.input-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    color:#00ffd5;
+}
+
+textarea,
+input{
+    width:100%;
+    background:#09111f;
+    color:white;
+    border:1px solid #00ffd5;
+    border-radius:10px;
+    padding:12px;
+    outline:none;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+    box-shadow:0 0 10px #00ffd5;
+}
+
+/* Buttons */
+
+.button-group{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:15px;
+}
+
+.button-group button{
+    flex:1;
+    min-width:120px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#00ffd5;
+    color:#001018;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.button-group button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 15px #00ffd5;
+}
+
+/* Visualization */
+
+.visual-card{
+    margin-top:15px;
+    background:#081221;
+    border:1px solid rgba(0,255,255,.15);
+    border-radius:12px;
+    padding:15px;
+}
+
+.visual-card h3{
+    color:#00ffd5;
+    margin-bottom:10px;
+}
+
+#visualization,
+#stepsBox,
+#decryptSteps{
+    max-height:250px;
+    overflow:auto;
+    line-height:1.8;
+    color:#d6f4ff;
+}
+
+/* Mapping Tables */
+
+.mapping-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:8px;
+}
+
+.mapping-cell{
+    text-align:center;
+    padding:8px;
+    border-radius:8px;
+    background:#0d1b2a;
+    border:1px solid #00ffd533;
+}
+
+/* Key Square */
+
+.key-square{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:5px;
+}
+
+.key-square div{
+    padding:10px;
+    text-align:center;
+    border:1px solid #00ffd555;
+    background:#0b1624;
+}
+
+/* Hill Matrix */
+
+.matrix{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:5px;
+    max-width:180px;
+}
+
+.matrix div{
+    padding:10px;
+    text-align:center;
+    background:#0b1624;
+    border:1px solid #00ffd555;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00ffd5;
+    border-radius:10px;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#7fa5b8;
+    border-top:1px solid rgba(0,255,255,.15);
+    margin-top:20px;
+}
+
+/* Responsive */
+
+@media(max-width:1200px){
+    main{
+        grid-template-columns:1fr;
+    }
+}

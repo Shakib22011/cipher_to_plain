@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Cipher Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="matrix-bg"></div>
+
+    <header>
+
+        <h1>🔐 CYBER CIPHER LAB</h1>
+
+        <p>
+            Learn, Visualize and Test Classical Cryptographic Algorithms
+        </p>
+
+    </header>
+
+    <!-- Cipher Selection -->
+
+    <section class="cipher-selector">
+
+        <button class="cipher-btn active"
+            data-cipher="mono"
+            onclick="loadCipher('mono')">
+            Monoalphabetic Cipher
+        </button>
+
+        <button class="cipher-btn"
+            data-cipher="playfair"
+            onclick="loadCipher('playfair')">
+            Playfair Cipher
+        </button>
+
+        <button class="cipher-btn"
+            data-cipher="hill"
+            onclick="loadCipher('hill')">
+            Hill Cipher
+        </button>
+
+    </section>
+
+    <main>
+
+        <!-- Tutorial -->
+
+        <section class="tutorial-panel">
+
+            <h2>📘 Tutorial</h2>
+
+            <div id="tutorialContainer">
+
+                <!-- Dynamic Tutorial -->
+
+            </div>
+
+        </section>
+
+        <!-- Encrypt Panel -->
+
+        <section class="encrypt-panel">
+
+            <h2>🔒 Encrypt Text</h2>
+
+            <div class="input-group">
+
+                <label>Plain Text</label>
+
+                <textarea id="plainText"></textarea>
+
+            </div>
+
+            <!-- Dynamic Key Area -->
+
+            <div id="keyArea">
+
+            </div>
+
+            <div class="button-group">
+
+                <button onclick="generateRandomKey()">
+                    Generate Key
+                </button>
+
+                <button onclick="encryptMessage()">
+                    Encrypt
+                </button>
+
+                <button onclick="copyEncrypted()">
+                    Copy
+                </button>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Encrypted Text</label>
+
+                <textarea id="encryptedOutput"
+                    readonly></textarea>
+
+            </div>
+
+            <div class="visual-card">
+
+                <h3>Visualization</h3>
+
+                <div id="visualization">
+
+                </div>
+
+            </div>
+
+            <div class="visual-card">
+
+                <h3>Encryption Steps</h3>
+
+                <div id="stepsBox">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Decrypt Panel -->
+
+        <section class="decrypt-panel">
+
+            <h2>🔓 Decrypt Text</h2>
+
+            <div class="input-group">
+
+                <label>Encrypted Text</label>
+
+                <textarea id="cipherText"></textarea>
+
+            </div>
+
+            <div id="decryptKeyArea">
+
+            </div>
+
+            <div class="button-group">
+
+                <button onclick="decryptMessage()">
+                    Decrypt
+                </button>
+
+                <button onclick="copyDecrypted()">
+                    Copy
+                </button>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Decrypted Text</label>
+
+                <textarea id="decryptedOutput"
+                    readonly></textarea>
+
+            </div>
+
+            <div class="visual-card">
+
+                <h3>Decryption Steps</h3>
+
+                <div id="decryptSteps">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            Cyber Security & Classical Cryptography Learning Platform
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
